@@ -1,7 +1,7 @@
 import React from 'react';
-import { Truck, Wrench, Megaphone, ShoppingCart, Globe, Building, Menu, X, Phone, MapPin, Mail, ChevronRight, ExternalLink } from 'lucide-react';
+import { Truck, Wrench, Megaphone, ShoppingCart, Globe, Building, Menu, X, Phone, MapPin, Mail, ChevronRight, ExternalLink, Check } from 'lucide-react';
 
-export type IconName = 'Truck' | 'Wrench' | 'Megaphone' | 'ShoppingCart' | 'Globe' | 'Building' | 'Menu' | 'X' | 'Phone' | 'MapPin' | 'Mail' | 'ChevronRight' | 'ExternalLink';
+export type IconName = 'Truck' | 'Wrench' | 'Megaphone' | 'ShoppingCart' | 'Globe' | 'Building' | 'Menu' | 'X' | 'Phone' | 'MapPin' | 'Mail' | 'ChevronRight' | 'ExternalLink' | 'Check';
 
 interface IconProps {
   name: IconName;
@@ -23,7 +23,8 @@ export const Icon: React.FC<IconProps> = ({ name, className, size = 24 }) => {
     MapPin,
     Mail,
     ChevronRight,
-    ExternalLink
+    ExternalLink,
+    Check
   };
 
   const IconComponent = icons[name];
