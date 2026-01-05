@@ -1,7 +1,7 @@
 import { HistoryItem, ServiceItem, CompanyInfo } from './types';
 
 export const COMPANY_PROFILE: CompanyInfo[] = [
-  { label: '商号', value: '株式会社天馬' },
+  { label: '商号', value: '株式会社天馬 (TENMA Co., Ltd.)' },
   { label: '本社所在地', value: ['〒332-0025', '埼玉県川口市原町1-10 大熊ビル 1F'] },
   { label: '電話番号', value: '048-212-8392' },
   { label: 'FAX', value: '048-212-3725' },
@@ -24,6 +24,38 @@ export const HISTORY_DATA: HistoryItem[] = [
 ];
 
 export const SERVICES_DATA: ServiceItem[] = [
+  {
+    title: 'TENMAオンラインショップ',
+    description: '楽天市場を中心に、暮らしを快適にする収納用品や雑貨を販売。「暮らしに寄り添う」をコンセプトにした信頼のオンラインショップです。',
+    iconName: 'ShoppingCart',
+    externalLink: 'https://www.rakuten.co.jp/tenmashop/',
+    details: [
+      {
+        heading: 'コンセプト',
+        text: 'TENMAオンラインショップは、「暮らしに寄り添う」をコンセプトに、毎日の生活をもっと快適・便利にするアイテムを豊富に取り揃えています。'
+      },
+      {
+        heading: '取扱商品ラインナップ',
+        text: 'すべての商品はお客様の使いやすさを考えて選定されており、高評価レビューも多数いただいています。',
+        points: [
+          '日常収納や整理に最適な収納ケース・チェストなどのホーム用品',
+          'キッチンやリビングを快適にする便利グッズ',
+          '健康・美容をサポートするアイテム',
+          '季節・トレンドに合わせた暮らしの雑貨'
+        ]
+      },
+      {
+        heading: '安心のサービス',
+        text: '楽天市場のプラットフォームを活用した安心の決済・配送対応で、初めての方でもスムーズにお買い物いただけます。',
+        images: [
+          'https://i.postimg.cc/L4x4KMV6/le-tian2.jpg',
+          'https://i.postimg.cc/h424Wq04/le-tian3.jpg',
+          'https://i.postimg.cc/7htqggLt/le-tian-tu1.jpg',
+          'https://i.postimg.cc/zDxDZ1kv/le-tian-tu4.jpg'
+        ]
+      }
+    ]
+  },
   {
     title: '輸送・配送サービス',
     description: '多様な車両を保有し、佐川急便やAmazon、大手スーパーチェーンと提携。信頼と実績に基づく高品質な配送サービスを提供します。',
@@ -115,30 +147,6 @@ export const SERVICES_DATA: ServiceItem[] = [
       {
         heading: '社員のキャリアアップ制度',
         text: '弊社は、努力と成果をしっかり評価する昇格制度を導入しています。現場スタッフからリーダー、チーフ、管理職へと、実績とスキルに応じて段階的にキャリアアップできる仕組みを整えています。'
-      }
-    ]
-  },
-  {
-    title: 'ECプラットフォーム',
-    description: '楽天市場及びヤフーショッピングを中心とする主要ECプラットフォームにて販売を展開しています。',
-    iconName: 'ShoppingCart',
-    details: [
-      {
-        heading: 'オンラインビジネスの展開',
-        text: '弊社は自社開発・製造の製品を、楽天市場及びヤフーショッピングを中心とする主要ECプラットフォームにて販売を展開しており、オンラインビジネス領域での事業拡大を積極的に推進しています。'
-      },
-      {
-        heading: 'ネットマーケティング・運営',
-        text: '単なる製品販売にとどまらず、専門的なマーケティング業務を軸に事業を成長させています。',
-        points: [
-          'ターゲット層に向けた効果的なプロモーション企画',
-          '魅力的なコンテンツ作成と顧客接点の最適化',
-          '販売データ分析に基づく戦略調整'
-        ]
-      },
-      {
-        heading: '人材育成とキャリア支援',
-        text: '新入社員に対して充実した研修プログラムを提供しています。EC運営の基礎知識、マーケティングスキル、製品知識など、業務に必要なスキルを体系的に習得可能です。経験豊富なスタッフが一対一でサポートし、個人の能力や関心に合わせたキャリアパスを設計します。'
       }
     ]
   },

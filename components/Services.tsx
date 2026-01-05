@@ -36,7 +36,7 @@ const Services: React.FC = () => {
               事業内容
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-slate-500">
-              お客様のニーズに応えるため、幅広い分野でプロフェッショナルなサービスを提供しています。
+              TENMAは、お客様のニーズに応えるため、幅広い分野でプロフェッショナルなサービスを提供しています。
             </p>
           </div>
         </ScrollReveal>
@@ -45,11 +45,12 @@ const Services: React.FC = () => {
           {SERVICES_DATA.map((service, index) => (
             <ScrollReveal key={index} delay={index * 150}>
               <div 
-                className="h-full bg-white rounded-2xl shadow-sm hover:shadow-xl border border-slate-100 transition-all duration-300 flex flex-col group overflow-hidden cursor-pointer"
+                className={`h-full bg-white rounded-2xl shadow-sm hover:shadow-xl border transition-all duration-300 flex flex-col group overflow-hidden cursor-pointer ${index === 0 ? 'border-blue-200 ring-1 ring-blue-100' : 'border-slate-100'}`}
                 onClick={() => openModal(service)}
               >
-                <div className="p-10 flex justify-center items-center bg-gradient-to-br from-blue-50 to-slate-50 group-hover:from-blue-100 group-hover:to-blue-50 transition-colors duration-300">
-                  <div className="w-20 h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center text-blue-900 group-hover:scale-110 group-hover:text-blue-600 transition-all duration-300 transform">
+                {/* Special styling for the first item (Shop) */}
+                <div className={`p-10 flex justify-center items-center transition-colors duration-300 ${index === 0 ? 'bg-gradient-to-br from-red-50 to-orange-50 group-hover:from-red-100 group-hover:to-orange-100' : 'bg-gradient-to-br from-blue-50 to-slate-50 group-hover:from-blue-100 group-hover:to-blue-50'}`}>
+                  <div className={`w-20 h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 ${index === 0 ? 'text-red-600 group-hover:text-red-700' : 'text-blue-900 group-hover:text-blue-600'}`}>
                      <Icon name={service.iconName} size={40} />
                   </div>
                 </div>
@@ -61,7 +62,7 @@ const Services: React.FC = () => {
                   </p>
                   <div className="mt-8 pt-4 border-t border-slate-50 w-full">
                     <span 
-                      className="inline-flex items-center text-blue-600 font-semibold text-sm group-hover:gap-2 transition-all gap-1 hover:underline"
+                      className={`inline-flex items-center font-semibold text-sm group-hover:gap-2 transition-all gap-1 hover:underline ${index === 0 ? 'text-red-600' : 'text-blue-600'}`}
                     >
                       詳細を見る <Icon name="ChevronRight" size={16} />
                     </span>
@@ -85,7 +86,7 @@ const Services: React.FC = () => {
             {/* Header */}
             <div className="px-6 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50 sticky top-0 z-20">
               <div className="flex items-center gap-3">
-                <div className="bg-blue-100 p-2 rounded-lg text-blue-700">
+                <div className={`p-2 rounded-lg ${selectedService.externalLink ? 'bg-red-100 text-red-700' : 'bg-blue-100 text-blue-700'}`}>
                   <Icon name={selectedService.iconName} size={24} />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900">{selectedService.title}</h3>
@@ -101,12 +102,29 @@ const Services: React.FC = () => {
 
             {/* Content */}
             <div className="p-6 md:p-8 overflow-y-auto">
+              
+              {/* External Link CTA (Top Placement for emphasis if it's the shop) */}
+              {selectedService.externalLink && (
+                <div className="mb-8 animate-in slide-in-from-top-4 duration-500">
+                  <a 
+                    href={selectedService.externalLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 w-full bg-[#BF0000] hover:bg-[#A00000] text-white font-bold py-4 px-6 rounded-xl shadow-lg transform transition-all hover:-translate-y-1 hover:shadow-xl text-lg"
+                  >
+                    <Icon name="ShoppingCart" size={24} />
+                    <span>TENMA オンラインショップ (楽天市場) へ</span>
+                    <Icon name="ExternalLink" size={20} />
+                  </a>
+                </div>
+              )}
+
               <div className="space-y-8">
                 {selectedService.details.map((section, i) => (
                   <div key={i} className="animate-in slide-in-from-bottom-2 duration-500" style={{ animationDelay: `${i * 100}ms` }}>
                     {/* Section Heading */}
                     {section.heading && (
-                      <h4 className="text-lg font-bold text-blue-900 border-l-4 border-blue-500 pl-3 mb-3 flex items-center">
+                      <h4 className={`text-lg font-bold border-l-4 pl-3 mb-3 flex items-center ${selectedService.externalLink ? 'text-slate-900 border-red-500' : 'text-blue-900 border-blue-500'}`}>
                         {section.heading}
                       </h4>
                     )}
@@ -123,7 +141,7 @@ const Services: React.FC = () => {
                       <ul className="bg-slate-50 rounded-lg p-5 space-y-3 border border-slate-100 mb-4">
                         {section.points.map((point, j) => (
                           <li key={j} className="flex items-start gap-3">
-                            <div className="mt-1 flex-shrink-0 text-blue-500">
+                            <div className={`mt-1 flex-shrink-0 ${selectedService.externalLink ? 'text-red-500' : 'text-blue-500'}`}>
                               <Icon name="Check" size={18} />
                             </div>
                             <span className="text-slate-700 font-medium text-sm md:text-base">{point}</span>
@@ -134,7 +152,7 @@ const Services: React.FC = () => {
 
                     {/* Image Grid */}
                     {section.images && section.images.length > 0 && (
-                      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 mt-6">
+                      <div className="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-4 mt-6">
                         {section.images.map((imgSrc, imgIndex) => (
                           <div 
                             key={imgIndex} 
@@ -166,7 +184,17 @@ const Services: React.FC = () => {
             </div>
 
             {/* Footer */}
-            <div className="px-6 py-4 border-t border-slate-100 bg-slate-50 flex justify-end sticky bottom-0 z-20">
+            <div className="px-6 py-4 border-t border-slate-100 bg-slate-50 flex justify-end sticky bottom-0 z-20 gap-3">
+              {selectedService.externalLink && (
+                 <a
+                    href={selectedService.externalLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden sm:flex px-4 py-2.5 text-red-600 font-bold hover:bg-red-50 rounded-lg transition-colors items-center gap-2"
+                  >
+                    楽天市場を見る <Icon name="ExternalLink" size={16} />
+                  </a>
+              )}
               <button
                 onClick={closeModal}
                 className="px-6 py-2.5 bg-slate-800 text-white font-bold rounded-lg hover:bg-slate-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"

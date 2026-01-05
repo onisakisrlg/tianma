@@ -16,6 +16,7 @@ export interface ServiceItem {
   description: string;
   details: ServiceDetailSection[]; // Changed from string to structured array
   iconName: 'Truck' | 'Wrench' | 'Megaphone' | 'ShoppingCart' | 'Globe' | 'Building';
+  externalLink?: string; // URL for external sites (e.g., Rakuten shop)
 }
 
 export interface CompanyInfo {
