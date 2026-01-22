@@ -27,6 +27,16 @@ const Contact: React.FC = () => {
                     <p className="text-2xl font-bold">048-212-8392</p>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="bg-blue-800 p-3 rounded-lg">
+                    <Icon name="Mail" className="text-white" size={24} />
+                  </div>
+                  <div>
+                    <p className="text-sm text-blue-300 font-semibold uppercase tracking-wider">メールアドレス</p>
+                    <a href="mailto:tenma_corporation@yahoo.co.jp" className="text-xl font-bold hover:text-blue-200 transition-colors break-all">tenma_corporation@yahoo.co.jp</a>
+                  </div>
+                </div>
                 
                 <div className="flex items-start gap-4">
                   <div className="bg-blue-800 p-3 rounded-lg">

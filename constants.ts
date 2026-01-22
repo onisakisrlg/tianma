@@ -64,6 +64,11 @@ export const SERVICES_DATA: ServiceItem[] = [
       {
         heading: '多様な車両と柔軟な対応力',
         text: '弊社は多様な車両を保有しており、軽貨物から中型車・大型車まで、お客様の荷物量や用途に合わせた最適な輸送サービスを提供しております。',
+        images: [
+          'https://i.postimg.cc/xd55jLW3/qi-xiu-chang-tu1.jpg',
+          'https://i.postimg.cc/9fbbXyv8/yun-shu-che1.jpg',
+          'https://i.postimg.cc/43PP4pr2/yun-shu-che2.jpg'
+        ]
       },
       {
         heading: '主要取引先と信頼の実績',
@@ -107,8 +112,34 @@ export const SERVICES_DATA: ServiceItem[] = [
         text: '事故によるボディの凹みやキズの修復、経年劣化による塗装の剥がれや錆びの処理も行います。最新の塗装設備と熟練の技術で、車両本来の美しさを復元。色合いの調整にもこだわり、目立たない自然な仕上がりを実現します。'
       },
       {
+        heading: 'カーフィルム施工',
+        text: '当社では、自動車用フィルム（カーフィルム）の施工サービスを提供しております。断熱性・紫外線カットに優れた高品質フィルムを使用し、快適で安全な車内環境を実現します。経験豊富なスタッフが丁寧に施工いたします。',
+        images: [
+          'https://i.postimg.cc/9Qn8ydxM/qi-che-gong-chang-yan-shi1.jpg',
+          'https://i.postimg.cc/2SKcnQHq/qi-che-gong-chang-yan-shi2.jpg',
+          'https://i.postimg.cc/4xSLp68c/qi-che-gong-chang-yan-shi3.jpg',
+          'https://i.postimg.cc/YCsnQ6XY/qi-che-tie-mo-fen-se1.jpg',
+          'https://i.postimg.cc/T347nVkx/qi-che-tie-mo-fen-se2.jpg',
+          'https://i.postimg.cc/fRr2YcHT/qi-che-tie-mo-hei-se1.jpg',
+          'https://i.postimg.cc/rwPn51hw/qi-che-tie-mo-hei-se2.jpg',
+          'https://i.postimg.cc/jSFgyH82/qi-che-tie-mo-hei-se3.jpg'
+        ]
+      },
+      {
         heading: '中古車販売',
         text: '厳しい品質チェックをクリアした信頼できる車両を多数取り揃えています。購入前には詳細な車両説明を行うほか、購入後のアフターサポートも充実しており、初めての方でも安心してご購入いただけます。'
+      },
+      {
+        heading: '自動車関連製品販売',
+        text: '当社は、エアフィルターをはじめとする各種自動車関連製品の販売を行っております。中国の大手工場と直接提携し、高品質かつ安定した製品供給を実現しています。自動車整備工場様のニーズに応える、信頼性の高い製品を提供いたします。',
+        images: [
+          'https://i.postimg.cc/T25Rb0Cm/qi-ta-chan-pin1.jpg',
+          'https://i.postimg.cc/FFk9SpDZ/qi-ta-chan-pin2.jpg',
+          'https://i.postimg.cc/FzSNQF7w/qi-ta-chan-pin3.jpg',
+          'https://i.postimg.cc/bYSzng32/lu-xin1.jpg',
+          'https://i.postimg.cc/1RV9FBJq/lu-xin2.jpg',
+          'https://i.postimg.cc/Df42G6BG/lu-xin-wai-bao-zhuang.jpg'
+        ]
       }
     ]
   },

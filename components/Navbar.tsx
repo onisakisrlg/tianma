@@ -19,6 +19,7 @@ const Navbar: React.FC = () => {
     { name: '事業内容', href: '#services' },
     { name: '会社概要', href: '#about' },
     { name: '沿革', href: '#history' },
+    { name: '採用情報', href: '#careers' },
     { name: 'お問い合わせ', href: '#contact' },
   ];
 
@@ -64,7 +65,7 @@ const Navbar: React.FC = () => {
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-1 lg:space-x-4">
-            {navLinks.map((link) => (
+            {navLinks.filter(link => link.href !== '#contact').map((link) => (
               <a
                 key={link.name}
                 href={link.href}
@@ -103,7 +104,7 @@ const Navbar: React.FC = () => {
         } bg-white`}
       >
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-inner">
-          {navLinks.map((link) => (
+          {navLinks.filter(link => link.href !== '#contact').map((link) => (
             <a
               key={link.name}
               href={link.href}
