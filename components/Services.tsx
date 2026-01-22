@@ -28,7 +28,7 @@ const Services: React.FC = () => {
 
   return (
     <section id="services" className="py-24 bg-slate-50 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         <ScrollReveal>
           <div className="text-center mb-16">
             <span className="text-blue-600 font-bold tracking-wider uppercase text-sm">Our Business</span>
@@ -41,30 +41,30 @@ const Services: React.FC = () => {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 xl:gap-6">
           {SERVICES_DATA.map((service, index) => (
-            <ScrollReveal key={index} delay={index * 150}>
+            <ScrollReveal key={index} delay={index * 100}>
               <div 
                 className={`h-full bg-white rounded-2xl shadow-sm hover:shadow-xl border transition-all duration-300 flex flex-col group overflow-hidden cursor-pointer ${index === 0 ? 'border-blue-200 ring-1 ring-blue-100' : 'border-slate-100'}`}
                 onClick={() => openModal(service)}
               >
                 {/* Special styling for the first item (Shop) */}
-                <div className={`p-10 flex justify-center items-center transition-colors duration-300 ${index === 0 ? 'bg-gradient-to-br from-red-50 to-orange-50 group-hover:from-red-100 group-hover:to-orange-100' : 'bg-gradient-to-br from-blue-50 to-slate-50 group-hover:from-blue-100 group-hover:to-blue-50'}`}>
-                  <div className={`w-20 h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 ${index === 0 ? 'text-red-600 group-hover:text-red-700' : 'text-blue-900 group-hover:text-blue-600'}`}>
-                     <Icon name={service.iconName} size={40} />
+                <div className={`p-6 xl:p-8 flex justify-center items-center transition-colors duration-300 ${index === 0 ? 'bg-gradient-to-br from-red-50 to-orange-50 group-hover:from-red-100 group-hover:to-orange-100' : 'bg-gradient-to-br from-blue-50 to-slate-50 group-hover:from-blue-100 group-hover:to-blue-50'}`}>
+                  <div className={`w-16 h-16 xl:w-20 xl:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center transition-all duration-300 transform group-hover:scale-110 ${index === 0 ? 'text-red-600 group-hover:text-red-700' : 'text-blue-900 group-hover:text-blue-600'}`}>
+                     <Icon name={service.iconName} size={32} className="xl:w-10 xl:h-10" />
                   </div>
                 </div>
                 
-                <div className="p-8 flex-1 flex flex-col text-center">
-                  <h3 className="text-xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                  <p className="text-slate-600 leading-relaxed text-sm flex-1 line-clamp-3">
+                <div className="p-5 xl:p-8 flex-1 flex flex-col text-center">
+                  <h3 className="text-lg xl:text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+                  <p className="text-slate-600 leading-relaxed text-xs xl:text-sm flex-1 line-clamp-3">
                     {service.description}
                   </p>
-                  <div className="mt-8 pt-4 border-t border-slate-50 w-full">
+                  <div className="mt-6 pt-4 border-t border-slate-50 w-full">
                     <span 
-                      className={`inline-flex items-center font-semibold text-sm group-hover:gap-2 transition-all gap-1 hover:underline ${index === 0 ? 'text-red-600' : 'text-blue-600'}`}
+                      className={`inline-flex items-center font-semibold text-xs xl:text-sm group-hover:gap-2 transition-all gap-1 hover:underline ${index === 0 ? 'text-red-600' : 'text-blue-600'}`}
                     >
-                      詳細を見る <Icon name="ChevronRight" size={16} />
+                      詳細を見る <Icon name="ChevronRight" size={14} />
                     </span>
                   </div>
                 </div>
